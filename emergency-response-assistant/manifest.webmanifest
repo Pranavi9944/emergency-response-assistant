@@ -1,0 +1,12 @@
+{
+  "name": "Saathi — Emergency Response Assistant",
+  "short_name": "Saathi",
+  "description": "Safety-first emergency guidance for India",
+  "lang": "en-IN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f2",
+  "theme_color": "#f7f7f2",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="A safety-first emergency guidance assistant for India. Recognize red flags, get basic first-aid steps and reach 112.">
+  <title>Saathi — Emergency response assistant</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Saathi home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span><strong>saathi</strong><small data-i18n="brandTag">help, when it matters</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="offline-pill"><i></i><span data-i18n="ready">Ready</span></span>
+        <label class="language-picker"><span class="sr-only" data-i18n="language">Language</span>
+          <select id="languageSelect" aria-label="Language"><option value="en">EN</option><option value="hi">हिंदी</option></select>
+        </label>
+        <button class="icon-button" id="contrastToggle" aria-label="Toggle high contrast" title="Toggle high contrast">◐</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span><span data-i18n="heroEyebrow">HERE WITH YOU · INDIA</span></div>
+          <h1 data-i18n="heroTitle">A calmer next step<br><em>starts right here.</em></h1>
+          <p data-i18n="heroDescription">Tell us what’s happening. We’ll help you spot warning signs and find the right next step.</p>
+          <div class="hero-actions">
+            <button class="button button-dark" id="startAssessment"><span>＋</span><span data-i18n="startCheck">Start a quick check</span><span class="button-arrow">↗</span></button>
+            <a class="button button-emergency" href="tel:112" id="heroCall"><span class="call-icon">☎</span><span><small data-i18n="needHelpNow">Need help now?</small><strong data-i18n="call112">Call 112</strong></span></a>
+          </div>
+          <p class="hero-note"><span>ⓘ</span><span data-i18n="heroNote">If someone may be in immediate danger, call 112 now. Don’t wait to use this app.</span></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-sun"></div><div class="art-ground"></div>
+          <div class="art-person"><span class="person-head"></span><span class="person-body"></span><span class="person-arm"></span></div>
+          <div class="art-heart">✦</div><div class="art-caption"><span class="caption-dot"></span><span data-i18n="withYou">Here with you</span></div>
+          <div class="art-spark spark-a">✳</div><div class="art-spark spark-b">✦</div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Safety information">
+        <span class="trust-icon">✓</span><span data-i18n="trust1">Clear, guided questions</span><b></b>
+        <span class="trust-icon">⌁</span><span data-i18n="trust2">Your information stays private</span><b></b>
+        <span class="trust-icon">↗</span><span data-i18n="trust3">You stay in control</span>
+      </section>
+
+      <section class="content-grid">
+        <div class="main-column">
+          <div class="section-heading"><div><span class="eyebrow muted" data-i18n="quickActions">QUICK ACTIONS</span><h2 data-i18n="preparedTitle">Be a little more prepared.</h2></div></div>
+          <div class="action-grid">
+            <button class="action-card check-card" id="cardAssessment"><span class="card-icon icon-coral">✳</span><span class="card-label" data-i18n="checkSymptoms">Check symptoms</span><span class="card-description" data-i18n="checkDescription">A few questions can help you choose what to do.</span><span class="card-link" data-i18n="getStarted">Get started <b>↗</b></span></button>
+            <button class="action-card profile-card" id="openProfile"><span class="card-icon icon-lilac">♡</span><span class="card-label" data-i18n="medicalCard">Medical card</span><span class="card-description" data-i18n="medicalDescription">Keep important health details close at hand.</span><span class="card-link" data-i18n="setUpCard">Set up your card <b>↗</b></span></button>
+            <button class="action-card guide-card" id="openFirstAid"><span class="card-icon icon-green">＋</span><span class="card-label" data-i18n="firstAid">First-aid guide</span><span class="card-description" data-i18n="firstAidDescription">Simple steps for a few urgent situations.</span><span class="card-link" data-i18n="viewGuide">View guide <b>↗</b></span></button>
+          </div>
+
+          <div class="section-heading incident-heading"><div><span class="eyebrow muted" data-i18n="yourHistory">YOUR HISTORY</span><h2 data-i18n="historyTitle">Recent checks</h2></div><button class="text-button" id="clearHistory" data-i18n="clearHistory">Clear history</button></div>
+          <div class="history-panel" id="historyList"><div class="history-empty"><span>◷</span><div><strong data-i18n="nothingYet">Nothing here yet</strong><p data-i18n="historyEmpty">Your recent checks will appear here on this device.</p></div></div></div>
+        </div>
+        <aside class="side-column">
+          <section class="safety-card"><div class="safety-heading"><span class="shield">✳</span><span class="eyebrow" data-i18n="safetyFirst">SAFETY FIRST</span></div><h3 data-i18n="safetyTitle">Not sure? Get help.</h3><p data-i18n="safetyCopy">When something feels seriously wrong, it’s safest to speak to emergency services or a health professional.</p><a href="tel:112" class="safety-call" id="sideCall"><span>☎</span><span data-i18n="callEmergency">Call emergency services</span><b>↗</b></a><small data-i18n="indiaNumber">India · 112</small></section>
+          <section class="disclaimer-card"><span class="disclaimer-icon">ⓘ</span><div><strong data-i18n="notDoctor">A note about this tool</strong><p data-i18n="disclaimerShort">Saathi isn’t a doctor and cannot diagnose. Don’t use it to delay professional care.</p><button class="inline-link" id="readDisclaimer" data-i18n="readMore">Read the full disclaimer ↗</button></div></section>
+          <div class="language-note"><span>अ</span><p data-i18n="languageNote">Made to be simple. Switch between English and Hindi anytime.</p></div>
+        </aside>
+      </section>
+      <footer><span>✳ saathi</span><span data-i18n="footerText">A small step toward getting help sooner.</span><button id="settingsButton" class="footer-link" data-i18n="privacySettings">Privacy & settings</button></footer>
+    </main>
+  </div>
+
+  <div class="modal-layer" id="modalLayer" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
